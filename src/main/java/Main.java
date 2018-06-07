@@ -5,33 +5,21 @@ import org.apache.lucene.analysis.*;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.index.*;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
-import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.search.*;
 import org.apache.lucene.document.*;
 import org.apache.lucene.store.*;
 
-import org.jsoup.Jsoup;
-import org.jsoup.select.Elements;
-import org.jsoup.nodes.Element;
-
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.io.BufferedReader;
 
 public class Main {
     static final String PROJECT_ROOT = new File("").getAbsolutePath();
     static final String INDEX_FILE = PROJECT_ROOT + File.separator + "indexFile";
 
     public static void main(String[] args) {
-
-
         get("/search", (request, response) -> {
             response.header("Access-Control-Allow-Origin", "*");
 
